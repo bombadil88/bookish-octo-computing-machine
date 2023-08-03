@@ -1,0 +1,24 @@
+Build version: 2.0 
+Build date: 1979-11-30 00:00:00 
+Current date: 2023-03-20 12:13:52 
+Device: Google AOSP on IA Emulator 
+ 
+Stack trace:  
+java.lang.IllegalStateException: Fatal Exception thrown on Scheduler.
+	at io.reactivex.android.schedulers.HandlerScheduler$ScheduledRunnable.run(HandlerScheduler.java:111)
+	at android.os.Handler.handleCallback(Handler.java:873)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loop(Looper.java:193)
+	at android.app.ActivityThread.main(ActivityThread.java:6669)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:858)
+Caused by: java.lang.RuntimeException: Этот заказ уже в работе
+	at com.yandex.scooter.app.ui.orders.OrderPresenter$onOrderAccept$1.onError(OrderPresenter.kt:82)
+	at io.reactivex.internal.operators.completable.CompletableObserveOn$ObserveOnCompletableObserver.run(CompletableObserveOn.java:87)
+	at io.reactivex.android.schedulers.HandlerScheduler$ScheduledRunnable.run(HandlerScheduler.java:109)
+	... 7 more
+
+User actions: 
+2023-03-20 12:13:08: MainActivity created
+2023-03-20 12:13:08: MainActivity resumed
